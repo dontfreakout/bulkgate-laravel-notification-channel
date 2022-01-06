@@ -4,7 +4,7 @@
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/laravel-notification-channels/bulkgate.svg?style=flat-square)](https://packagist.org/packages/laravel-notification-channels/bulkgate)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Build Status](https://img.shields.io/travis/laravel-notification-channels/bulkgate/master.svg?style=flat-square)](https://travis-ci.org/laravel-notification-channels/bulkgate)
-[![StyleCI](https://styleci.io/repos/431969862/shield)](https://styleci.io/repos/431969862)
+[![StyleCI](https://github.styleci.io/repos/431969862/shield?branch=bulkgate)](https://github.styleci.io/repos/431969862?branch=bulkgate)
 [![Quality Score](https://img.shields.io/scrutinizer/g/laravel-notification-channels/bulkgate.svg?style=flat-square)](https://scrutinizer-ci.com/g/laravel-notification-channels/bulkgate)
 [![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/laravel-notification-channels/bulkgate/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/laravel-notification-channels/bulkgate/?branch=master)
 [![Total Downloads](https://img.shields.io/packagist/dt/laravel-notification-channels/bulkgate.svg?style=flat-square)](https://packagist.org/packages/laravel-notification-channels/bulkgate)

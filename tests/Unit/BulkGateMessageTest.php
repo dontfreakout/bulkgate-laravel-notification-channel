@@ -37,8 +37,7 @@ class BulkGateMessageTest extends TestCase
         $message = new BulkGateMessage();
 
         $message->to('+420123456789')
-            ->text('Hello World')
-        ;
+            ->text('Hello World');
 
         $this->assertEquals('Hello World', $message->getMessage()->getText());
     }

@@ -41,16 +41,13 @@ class BulkGateChannelTest extends TestbenchTestCase
             ->withArgs(function ($message) {
                 return '71234567890' === $message->getPhoneNumber()->getPhoneNumber();
             })
-            ->andReturn($this->response)
-        ;
+            ->andReturn($this->response);
 
         $this->response->shouldReceive('isSuccess')
-            ->andReturn(true)
-        ;
+            ->andReturn(true);
 
         $this->dispatcher->shouldReceive('dispatch')
-            ->with(BulkGateSmsSent::class)
-        ;
+            ->with(BulkGateSmsSent::class);
 
         $channel = new BulkGateChannel($this->sender, $this->dispatcher);
         $channel->send(new NotifiableWithAttribute(), new TestNotificationStaticCreate());
@@ -62,16 +59,13 @@ class BulkGateChannelTest extends TestbenchTestCase
             ->withArgs(function ($message) {
                 return '71234567890' === $message->getPhoneNumber()->getPhoneNumber();
             })
-            ->andReturn($this->response)
-        ;
+            ->andReturn($this->response);
 
         $this->response->shouldReceive('isSuccess')
-            ->andReturn(true)
-        ;
+            ->andReturn(true);
 
         $this->dispatcher->shouldReceive('dispatch')
-            ->with(BulkGateSmsSent::class)
-        ;
+            ->with(BulkGateSmsSent::class);
 
         $channel = new BulkGateChannel($this->sender, $this->dispatcher);
         $channel->send(new NotifiableWithAttribute(), new TestNotification());
@@ -83,16 +77,13 @@ class BulkGateChannelTest extends TestbenchTestCase
             ->withArgs(function ($message) {
                 return '71234567890' === $message->getPhoneNumber()->getPhoneNumber();
             })
-            ->andReturn($this->response)
-        ;
+            ->andReturn($this->response);
 
         $this->response->shouldReceive('isSuccess')
-            ->andReturn(true)
-        ;
+            ->andReturn(true);
 
         $this->dispatcher->shouldReceive('dispatch')
-            ->with(BulkGateSmsSent::class)
-        ;
+            ->with(BulkGateSmsSent::class);
 
         $channel = new BulkGateChannel($this->sender, $this->dispatcher);
         $channel->send(new NotifiableWithRoute(), new TestNotificationStaticCreate());
@@ -104,16 +95,13 @@ class BulkGateChannelTest extends TestbenchTestCase
             ->withArgs(function ($message) {
                 return TestNotificationWithCustomRecipient::RECIPIENT === $message->getPhoneNumber()->getPhoneNumber();
             })
-            ->andReturn($this->response)
-        ;
+            ->andReturn($this->response);
 
         $this->response->shouldReceive('isSuccess')
-            ->andReturn(true)
-        ;
+            ->andReturn(true);
 
         $this->dispatcher->shouldReceive('dispatch')
-            ->with(BulkGateSmsSent::class)
-        ;
+            ->with(BulkGateSmsSent::class);
 
         $channel = new BulkGateChannel($this->sender, $this->dispatcher);
         $channel->send(new NotifiableWithAttribute(), new TestNotificationWithCustomRecipient());
@@ -122,8 +110,7 @@ class BulkGateChannelTest extends TestbenchTestCase
     public function testRiseExceptionWhenInvalidMessage()
     {
         $this->dispatcher->shouldReceive('dispatch')
-            ->with(NotificationFailed::class)
-        ;
+            ->with(NotificationFailed::class);
 
         $this->expectException(CouldNotSendNotification::class);
         $this->expectExceptionMessageMatches('/^Message must be an instance of/');
@@ -135,8 +122,7 @@ class BulkGateChannelTest extends TestbenchTestCase
     public function testRiseExceptionWhenNotificationHasNoToBulkGateRoute()
     {
         $this->dispatcher->shouldReceive('dispatch')
-            ->with(NotificationFailed::class)
-        ;
+            ->with(NotificationFailed::class);
 
         $this->expectException(CouldNotSendNotification::class);
         $this->expectExceptionMessageMatches('/method in order to send via the BulkGate SMS channel\.$/');
@@ -148,16 +134,13 @@ class BulkGateChannelTest extends TestbenchTestCase
     public function testRiseExceptionWhenInvalidResponse()
     {
         $this->dispatcher->shouldReceive('dispatch')
-            ->with(NotificationFailed::class)
-        ;
+            ->with(NotificationFailed::class);
 
         $this->sender->shouldReceive('send')
-            ->andReturn($this->response)
-        ;
+            ->andReturn($this->response);
 
         $this->response->shouldReceive('isSuccess')
-            ->andReturn(false)
-        ;
+            ->andReturn(false);
 
         $this->expectException(CouldNotSendNotification::class);
         $this->expectExceptionMessageMatches('/^BulkGate responded with an error:/');

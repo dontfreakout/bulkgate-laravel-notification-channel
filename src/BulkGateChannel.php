@@ -30,7 +30,7 @@ class BulkGateChannel
     /**
      * Send the given notification.
      *
-     * @param mixed $notifiable
+     * @param  mixed  $notifiable
      *
      * @throws \NotificationChannels\BulkGate\Exceptions\CouldNotSendNotification
      * @throws \Exception
@@ -77,8 +77,8 @@ class BulkGateChannel
     }
 
     /**
-     * @param mixed      $notifiable
-     * @param null|mixed $notification
+     * @param  mixed  $notifiable
+     * @param  null|mixed  $notification
      *
      * @throws \NotificationChannels\BulkGate\Exceptions\CouldNotSendNotification
      */
