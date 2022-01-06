@@ -18,7 +18,7 @@ class BulkGateSmsSent
     public $response;
 
     /**
-     * @param mixed $notifiable
+     * @param  mixed  $notifiable
      */
     public function __construct(
         $notifiable,

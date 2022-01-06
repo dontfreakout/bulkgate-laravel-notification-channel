@@ -14,7 +14,6 @@ return [
     // Or ISO 3166-1 alpha-2
     // 'default_country' => 'gb',
 
-
     // Choose the sender type to which the messages will be routed.
     // Available options:
     // -----------------
